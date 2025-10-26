@@ -4,8 +4,9 @@ import './App.css';
 import Principal from './pages/principal'; 
 import InicioSesion from './pages/inicioSesion';
 import Cuenta from './pages/cuenta'; 
-import PublicarHilo from './pages/publicarHilo';
+import PublicarHilo from './pages/contacto';
 import Registro from './pages/registro';
+import Contacto from "./pages/contacto";
 
 function Navbar() {
   return (
@@ -21,6 +22,9 @@ function Navbar() {
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/cuenta">Cuenta</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contacto">Contacto</Link>
               </li>
             </ul>
           </div>
@@ -45,7 +49,7 @@ function App() {
           <Route path="/cuenta" element ={<Cuenta />} />
           <Route path="/principal" element ={<Principal />} />
        
-          <Route path="/publicarHilo" element ={<PublicarHilo />} />
+          <Route path="/contacto" element ={<Contacto />} />
           <Route path="/registro" element ={<Registro/>} />
         </Routes>
       </div>

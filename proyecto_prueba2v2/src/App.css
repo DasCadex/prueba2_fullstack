@@ -48,7 +48,10 @@ body {
 
 .mi-navbar .nav-link:hover {
   background-color: rgb(255, 238, 0);
-  color: #000;
+  color: #ffffff;
+}
+.mi-navbar .nav-link:focus {
+  color: #ffffff;
 }
 
 /* === FOOTER === */

@@ -12,7 +12,7 @@
 
 /* Contenedor con fondo oscuro para la sección de los hilos */
 .hilos-wrapper {
-  background-color: rgba(10, 10, 20, 0.85);
+  background-color: radial-gradient(circle at center top, rgba(114, 0, 255, 0.6) 0%, transparent 70%);
   padding: 2rem 1rem;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -20,20 +20,22 @@
 }
 
 /* === PESTAÑAS DE CATEGORÍAS (Pills) === */
+
+.nav-link:hover {
+  transform: scale(1.15);
+}
 .nav-pills .nav-link {
-  color: #ccc;
+  color: #ffffff;
   border-radius: 20px;
   font-weight: bold;
 }
-
-.nav-pills .nav-link.active {
-  background-color: #00ff40;
-  color: #000;
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+  background-color: #ffee00 !important; 
 }
 
 /* === TARJETA DE LOS HILOS === */
 .custom-card {
-  background-color: #1a1a2e !important; /* Color de fondo oscuro */
+  background-color: #f8000018 !important; /* Color de fondo oscuro */
   border: none!important;
   border-radius: 12px;
   color: white !important; /* Texto blanco para que se lea */
@@ -75,7 +77,8 @@
 .btn-custom:hover {
   background-color: #C20E66 !important; /* <-- Un rosado un poco más oscuro al pasar el ratón */
   color: white!important;
-  transform: scale(1.05)!important; /* Opcional: un pequeño efecto de zoom */
+  transform: scale(1.15)!important; /* Opcional: un pequeño efecto de zoom */
+  box-shadow: 0 0 12px;
 
 }
 
