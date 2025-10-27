@@ -5,7 +5,7 @@ import logo from '../img/logo.png';
 import defaultAvatar from '../img/default-avatar.png'; 
 import { useNavigate } from "react-router-dom";
 
-const cuenta: React.FC = () => {
+const Cuenta: React.FC = () => { // <-- CAMBIO: de 'cuenta' a 'Cuenta'
   // --- ESTADOS ---
 
   const [nombreUsuario, setNombreUsuario] = useState('');
@@ -214,5 +214,4 @@ const cuenta: React.FC = () => {
   );
 };
 
-export default cuenta;
-
+export default Cuenta;

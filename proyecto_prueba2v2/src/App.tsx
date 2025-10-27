@@ -1,23 +1,18 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import React from 'react'; 
 import './App.css'; 
 import Principal from './pages/principal'; 
 import InicioSesion from './pages/inicioSesion';
 import Cuenta from './pages/cuenta'; 
-import PublicarHilo from './pages/contacto';
 import Registro from './pages/registro';
 import Contacto from "./pages/contacto";
 
 function Navbar() {
   return (
-    // <nav> se envuelve con navbar-wrapper
     <div className="navbar-wrapper"> 
       <nav className="navbar navbar-expand-lg mi-navbar">
         <div className="container-fluid">
-          {/* Logo/Link Principal */}
           <Link className="nav-link" to="/principal">PixelHub</Link>
-
-          {/* Contenido Colapsable (Enlaces) */}
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
@@ -34,27 +29,56 @@ function Navbar() {
   );
 }
 
+
 function App() {
+  
+  const navigate = useNavigate(); 
+
+  const handleLoginSuccess = (email: string) => {
+    alert(`Gracias ${email}, has iniciado sesión!`); 
+    navigate('/principal');
+  };
+
+  const handleNavigateToRegister = () => {
+    navigate('/registro');
+  };
+
+  // ---Función para navegar a Inicio de Sesión ---
+  const handleNavigateToLogin = () => {
+    navigate('/inicioSesion'); // Navega a la nueva ruta de login
+  };
+
   return (
-    // La clase App (o el body) debe manejar la altura completa y el layout
     <div className="App"> 
-      
-      {/* 1. BARRA DE NAVEGACIÓN (Navbar) */}
       <Navbar /> 
 
-      {/* 2. CONTENIDO PRINCIPAL (Rutas) - Se muestra debajo de la Navbar */}
       <div className="main-content">
         <Routes>
-          <Route path="/" element ={<InicioSesion />} />
-          <Route path="/cuenta" element ={<Cuenta />} />
-          <Route path="/principal" element ={<Principal />} />
-       
-          <Route path="/contacto" element ={<Contacto />} />
-          <Route path="/registro" element ={<Registro/>} />
+          {/* --- CAMBIO: La ruta raíz ahora muestra Registro --- */}
+          <Route 
+            path="/" 
+            element={<Registro />} // Muestra Registro por defecto
+          />
+          {/* --- CAMBIO: La ruta /inicioSesion ahora muestra InicioSesion --- */}
+          <Route 
+            path="/inicioSesion" 
+            element={
+              <InicioSesion 
+                onLoginSuccess={handleLoginSuccess}
+                onNavigateToRegister={handleNavigateToRegister} // Mantenemos esta por si acaso
+              />
+            } 
+          />
+          <Route path="/cuenta" element={<Cuenta />} />
+          <Route path="/principal" element={<Principal />} />
+          <Route path="/contacto" element={<Contacto />} />
+          {/* --- CAMBIO: La ruta /registro ahora también lleva a Registro (o puedes quitarla si / es suficiente) --- */}
+          {/* Si quieres que /registro siga funcionando, déjala así: */}
+          <Route path="/registro" element={<Registro />} /> 
+          {/* Si prefieres que solo / funcione para registro, puedes borrar la línea anterior */}
         </Routes>
       </div>
 
-      {/* 3. FOOTER */}
       <footer className="footer">
         © 2025 PixelHub - Todos los derechos reservados 
       </footer>
@@ -62,4 +86,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

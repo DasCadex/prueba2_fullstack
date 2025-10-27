@@ -108,7 +108,4 @@
   color: white; /* Texto blanco */
   border-color: #00cfff; /* Un color que resalte */
   box-shadow: 0 0 5px #00cfff; /* Sombra al seleccionar */
-} /* <--- ¡LA LLAVE DE CIERRE FALTANTE FUE AÑADIDA! */
-
-
-
+}
