@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../css/contacto.css'; // <-- Importamos el nuevo CSS
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";//prueba de commit para github
 
 // Declaramos el componente funcional
 const Contacto: React.FC = () => {
