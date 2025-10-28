@@ -8,6 +8,7 @@ const Contacto: React.FC = () => {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [mensaje, setMensaje] = useState('');
+  //prueba del git hub 
   
   const navigate = useNavigate(); // Hook para navegación
 
